@@ -1,7 +1,7 @@
 # Background
 Under a cooperative agreement with the U.S. Department of Agriculture (USDA), the [George Washington University Regulatory Studies Center](https://regulatorystudies.columbian.gwu.edu/) conducted research analyzing public comments to inform agency regulatory reform efforts in the United States. A group of faculty members and researchers affiliated with the GW Regulatory Studies Center contributed to the research project, and subject matter experts at the USDA Office of the Chief Economist provided technical advice. The research report is available at: https://regulatorystudies.columbian.gwu.edu/putting-food-table-agriculture-and-regulation.
 
-In this research, we (the GW Regulatory Studies Center research team) developed Python code to retrieve, clean, and analyze data of public comments. We share the code in this reporsitory. The goal is to provide code that can be easily modified for use in other research using public comments.
+In this research, we (the GW Regulatory Studies Center research team) developed Python code to retrieve, clean, and analyze data of public comments. We share the code in this repository. The goal is to provide code that can be easily modified for use in other research using public comments.
 
 The initial content available in the repository includes the code to retrieve public submissions via the [Regulations.gov API](https://www.regulations.gov/apiOverview), including comments submitted as PDF attachments, and convert them into text data. As we continue uploading new code for other parts of our analysis, we hope other researchers and programmers can contribute to the repository or suggest improvements to make it a more useful tool.
 
