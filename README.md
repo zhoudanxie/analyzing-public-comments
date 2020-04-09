@@ -3,7 +3,7 @@ Under a cooperative agreement with the U.S. Department of Agriculture (USDA), th
 
 In this research, we (the GW Regulatory Studies Center research team) developed Python code to retrieve, clean, and analyze data of public comments. We share the code in this repository. The goal is to provide code that can be easily modified for use in other research using public comments.
 
-The initial content available in the repository includes the code to retrieve public submissions via the [Regulations.gov API](https://www.regulations.gov/apiOverview), including comments submitted as PDF attachments, and convert them into text data. As we continue uploading new code for other parts of our analysis, we hope other researchers and programmers can contribute to the repository or suggest improvements to make it a more useful tool.
+We will update this repository routinely with new code from the above project and future research using comments. The initial content available in the repository includes the code to retrieve public submissions via the [Regulations.gov API](https://www.regulations.gov/apiOverview), including comments submitted as PDF attachments, and convert them into text data. As we continue uploading new content, we hope other researchers and programmers can contribute to the repository or suggest improvements to make it a more useful tool.
 
 # Retrieving public comments from Regulations.gov
 ## Regulations.gov API
@@ -17,3 +17,11 @@ For a detailed description of Regulations.gov API, visit: https://regulationsgov
 The first thing you need to use the Regulations.gov API is a unique API key designated to you or your organization. You can contact the Regulations.gov Help Desk to request an API key, providing the information listed on [this page](https://regulationsgov.github.io/developers/).
 
 You will then receive instructions and a URL for signing up an API key. You will be assigned a API key immediately, but it is not ready for use immediately. You will need to send the key back to the Regulations.gov Help Desk for the developers to activate your key for use on Regulations.gov. The activation process may take a few days to a couple of weeks.
+
+## How to retrieve comments submitted to a docket using API
+If you would like to retrieve the full text of comments submitted to a Regulations.gov docket (e.g., [Identifying Regulatory Reform Initiatives](https://www.regulations.gov/docket?D=USDA-2017-0002)), follow these steps:
+* Export the docket folder: the exported file contains metadata for all the documemnts in the docket (e.g., rules, public submissions), including a Document ID for each comment which will be used as an identifier in API quiries.
+	* Go to the Docket Folder Summary page ([example](https://www.regulations.gov/docket?D=USDA-2017-0002))
+	* Click on View All in the Comments section
+	* Click on Export above the results and save the .csv file to your local folder
+* 
