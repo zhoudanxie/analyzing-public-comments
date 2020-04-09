@@ -12,15 +12,15 @@ import os
 #-----------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------Get comments by Document ID------------------------------------------------
 
-docketFile='Retrieve Comments/DocketExample.csv'    # Specify the path of your docket metadata file exported from Regulation.gov
+docketFile='Retrieve Comments/DocketExample.csv'    #! Specify the path of your docket metadata file exported from Regulation.gov
 docket = pd.read_csv(docketFile,skiprows=4)
 docket=docket[docket['Document Type']=='PUBLIC SUBMISSIONS']
 
-APIkey="[YOUR API KEY]"   # Add your API key here
+APIkey="[YOUR API KEY]"   #! Add your API key here
 
 #------------------------------------------Retrieve text comments-------------------------------------------------------
 
-saveFile='Retrieve Comments/Text Comments Example.csv'   # Specify the path and name of the file you want to save the text comments as
+saveFile='Retrieve Comments/Text Comments Example.csv'   #! Specify the path and name of the file you want to save the text comments as
 
 if os.path.isfile(saveFile):
     commentsRetrieved=pd.read_csv(saveFile)
@@ -67,7 +67,7 @@ baseURL2="&attachmentNumber="
 baseURL3_pdf="&contentType=pdf"
 baseURL3_doc="&contentType=msw"
 
-folderPath="Retrieve Comments/Comment Attachments/"    # Specify the path of the folder where you want to save the downloaded PDF files
+folderPath="Retrieve Comments/Comment Attachments/"    #! Specify the path of the folder where you want to save the downloaded files
 
 totalAtt=sum(docket_att['Attachment Count'])    # It may take a long time if you are downloading a large number of attachments
 print("Total number of attachments you are requesting to downloaded is:", totalAtt)
