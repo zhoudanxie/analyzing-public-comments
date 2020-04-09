@@ -28,5 +28,6 @@ If you would like to retrieve the full text of comments submitted to a Regulatio
 	* Select your preferred development environment for running the Python script (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/))
 	* Modify the script following the annotations in the script, including adding your API key and specifying the location of your exported docket metadata file, etc.
 	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC files to your local folder
+
 *Notes: Regulations.gov sets a rate limit of 1,000 requests per hour applied to all API users. A pause is added between two requests using `time.sleep()` in the script to avoid errors. As a result, it may take a long time you are retrieving a large number of comments.*
 
