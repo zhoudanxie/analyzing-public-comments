@@ -24,4 +24,8 @@ If you would like to retrieve the full text of comments submitted to a Regulatio
 	* Go to the Docket Folder Summary page ([example](https://www.regulations.gov/docket?D=USDA-2017-0002))
 	* Click on View All in the Comments section
 	* Click on Export above the results and save the .csv file to your local folder
-* 
+* Modify the Python script "Retrive Comments/GetComments.py" to download comments submitted to the docket in both text and attachment format
+	* Select your preferred development environment for running the Python script (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/))
+	* Modify the script following the annotations in the script, including adding your API key and specifying the location of your exported docket metadata file, etc.
+	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC files
+
