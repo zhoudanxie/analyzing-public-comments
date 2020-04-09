@@ -17,7 +17,7 @@ docketFile='Retrieve Comments/DocketExample.csv'    # Specify the path of your d
 docket = pd.read_csv(docketFile,skiprows=4)
 docket=docket[docket['Document Type']=='PUBLIC SUBMISSIONS']
 
-#APIkey="[YOUR API KEY]"   # Add your API key here
+APIkey="[YOUR API KEY]"   # Add your API key here
 
 #-----------------------------------------------------------------------------------------------------------------------
 # Retrieve text comments
