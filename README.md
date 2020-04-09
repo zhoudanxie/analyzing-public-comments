@@ -20,12 +20,13 @@ You will then receive instructions and a URL for signing up an API key. You will
 
 ## How to retrieve comments submitted to a docket using API
 If you would like to retrieve the full text of comments submitted to a Regulations.gov docket (e.g., [Identifying Regulatory Reform Initiatives](https://www.regulations.gov/docket?D=USDA-2017-0002)), follow these steps:
-* Export the docket folder: the exported file contains metadata for all the documemnts in the docket (e.g., rules, public submissions), including a Document ID for each comment which will be used as an identifier in API quiries.
+* Export the docket folder: the exported file contains metadata for all the documents in the docket (e.g., rules, public submissions), including a Document ID for each comment which will be used as an identifier in API quiries.
 	* Go to the Docket Folder Summary page ([example](https://www.regulations.gov/docket?D=USDA-2017-0002))
 	* Click on View All in the Comments section
-	* Click on Export above the results and save the .csv file to your local folder
-* Modify the Python script "Retrive Comments/GetComments.py" to download comments submitted to the docket in both text and attachment format
+	* Click on Export (on top of the results) and save the .csv file to your local folder
+* Modify the Python script "Retrive Comments/GetComments.py" to download comments submitted to the docket in both text and attachment format.
 	* Select your preferred development environment for running the Python script (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/))
 	* Modify the script following the annotations in the script, including adding your API key and specifying the location of your exported docket metadata file, etc.
-	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC files
+	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC files to your local folder
+*Notes: Regulations.gov sets a rate limit of 1,000 requests per hour applied to all API users. A pause is added between two requests using `time.sleep()` in the script to avoid errors. As a result, it may take a long time you are retrieving a large number of comments.*
 
