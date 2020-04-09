@@ -1,7 +1,6 @@
 #-----------------------------------------Retrieve Comments from Regulations.gov---------------------------------------#
 #---------------------------------------------The GW Regulatory Studies Center-----------------------------------------#
 #--------------------------------------------------Author: Zhoudan Xie-------------------------------------------------#
-#-----------------------------------------------Last Update: April 8, 2020---------------------------------------------#
 
 # Import packages
 import pandas as pd
@@ -17,10 +16,10 @@ docketFile='Retrieve Comments/DocketExample.csv'    # Specify the path of your d
 docket = pd.read_csv(docketFile,skiprows=4)
 docket=docket[docket['Document Type']=='PUBLIC SUBMISSIONS']
 
-#APIkey="[YOUR API KEY]"   # Add your API key here
+APIkey="[YOUR API KEY]"   # Add your API key here
 
-#-----------------------------------------------------------------------------------------------------------------------
-# Retrieve text comments
+#------------------------------------------Retrieve text comments-------------------------------------------------------
+
 saveFile='Retrieve Comments/Text Comments Example.csv'   # Specify the path and name of the file you want to save the text comments as
 
 if os.path.isfile(saveFile):
@@ -58,8 +57,9 @@ else:
 textComments = pd.DataFrame(dic_comments,index=[0]).T.reset_index().rename(columns={'index': 'Document ID',0:'Text Comment'})
 textComments.to_csv(saveFile,index=False)
 
-#-----------------------------------------------------------------------------------------------------------------------
-# Retrieve comments submitted as PDF or DOC attachments
+
+#----------------------------Retrieve comments submitted as PDF or DOC attachments--------------------------------------
+
 docket_att=docket[docket["Attachment Count"].notnull()]
 
 baseURL1 = "https://api.data.gov/regulations/v3/download?api_key="+APIkey+"&documentId="
