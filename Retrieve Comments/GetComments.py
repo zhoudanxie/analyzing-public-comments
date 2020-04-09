@@ -71,36 +71,46 @@ folderPath="Retrieve Comments/Comment Attachments/"    #! Specify the path of th
 
 totalAtt=sum(docket_att['Attachment Count'])    # It may take a long time if you are downloading a large number of attachments
 print("Total number of attachments you are requesting to downloaded is:", totalAtt)
-fileCount=len(os.listdir(folderPath))
+downloaded=[]
+undownloaded=[]
 attempt=0
-max_attempt=1000    # Define the maximum times you want to loop over the docket metadata file
-while (fileCount<totalAtt) & (attempt<max_attempt):
-    print("Number of attachments you have downloaded is:", fileCount,"(downloading more...)")
+max_attempt=10    # Define the maximum times you want to loop over the docket metadata file
+while (len(downloaded)<totalAtt) & (attempt<=max_attempt):
+    if attempt>1:
+        print("Number of attachments you have downloaded is:", len(downloaded),"(downloading more...)")
     for docID in docket_att["Document ID"]:
         no=1
         attNo = docket_att[docket_att["Document ID"] == docID]["Attachment Count"].values[0]
         while no <= attNo:
-            if (os.path.isfile(folderPath+docID+"_"+str(no)+".pdf")) or (os.path.isfile(folderPath+docID+"_"+str(no)+".doc")):
+            fileName=docID+"_"+str(no)
+            if (os.path.isfile(folderPath+docID+"_"+str(no)+".pdf")) or (os.path.isfile(folderPath+fileName+".doc")):
+                if fileName not in downloaded:
+                    downloaded.append(fileName)
                 pass
             else:
                 try:
-                    urllib.request.urlretrieve(baseURL1 + docID + baseURL2 + str(no) + baseURL3_pdf, folderPath+docID+"_"+str(no)+".pdf")
+                    urllib.request.urlretrieve(baseURL1 + docID + baseURL2 + str(no) + baseURL3_pdf, folderPath+fileName+".pdf")
+                    downloaded.append(fileName)
                     time.sleep(5)      # Sleep to avoid the Too Many Requests error due to the rate limit set by Regulations.gov
                 except:
                     try:
                         urllib.request.urlretrieve(baseURL1 + docID + baseURL2 + str(no) + baseURL3_doc,
-                                                   folderPath + docID + "_" + str(no) + ".doc")
+                                                   folderPath + fileName + ".doc")
+                        downloaded.append(fileName)
                         time.sleep(5)  # Sleep to avoid the Too Many Requests error due to the rate limit set by Regulations.gov
                     except:
-                        pass
+                        if attempt==max_attempt:
+                            undownloaded.append(fileName)
                         time.sleep(60)  # Sleep longer if you have reached the rate limit
+                        pass
             no=no+1
-    fileCount=len(os.listdir(folderPath))
     attempt=attempt+1
 else:
-    if fileCount==totalAtt:
-        print("Number of attachments you have downloaded is:", fileCount, "(downloading completed)")
+    if len(downloaded)==totalAtt:
+        print("Number of attachments you have downloaded is:", len(downloaded), "(downloading completed)")
     else:
-        print("Downloading attempts exceeded",max_attempt,": check if you have attachments not in PDF or DOC format")
-        # You need to manually download the attachments not in PDF or DOC format to the same folder and run the program again
+        print("Number of attachments you have downloaded is:", len(downloaded), "(downloading incompleted)")
+        print("Request attempts exceeded "+str(max_attempt)+". The following file(s) could not be downloaded:")
+        print(undownloaded)
+        print("Note: You need to manually download the attachments not in PDF or DOC format.")
     print("END")
