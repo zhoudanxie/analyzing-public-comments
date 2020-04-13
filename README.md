@@ -25,7 +25,7 @@ If you would like to retrieve the full text of comments submitted to a Regulatio
 	* Click on View All in the Comments section
 	* Click on Export (on top of the results) and save the .csv file to your local folder
 * Modify the Python script "Retrive Comments/GetComments.py" to download comments submitted to the docket in both text and attachment format.
-	* (For Beginners who use Python for the first time:) Select your preferred development environment for running the Python script (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/)). You can also install [Anaconda](https://www.anaconda.com/) to help you manage the environment.
+	* *(For Beginners who use Python for the first time)* Select your preferred development environment for running the Python script (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/)). You can also install [Anaconda](https://www.anaconda.com/) to help you manage the environment.
 	* Modify the script following the annotations in the script, including adding your API key and specifying the location of your exported docket metadata file, etc.
 	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC files to your local folder
 
