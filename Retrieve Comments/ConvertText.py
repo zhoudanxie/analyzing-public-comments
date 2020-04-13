@@ -116,7 +116,7 @@ if len(notConverted)>0:
     print(notConverted)
 print("END")
 
-#---------------------------------------------Export converted comments-------------------------------------------------
+#---------------------------------------------Export converted text-------------------------------------------------
 # Export to JSON
 js_pdfComments=json.dumps(dic_pdfComments)
 with open('Retrieve Comments/Attachment Comments Example.json', 'w', encoding='utf-8') as f:
