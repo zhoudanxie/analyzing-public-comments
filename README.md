@@ -5,7 +5,7 @@ In this research, we (the GW Regulatory Studies Center research team) developed 
 
 We will update this repository routinely with new code from the above project and future research using comments. The initial content available in the repository includes the code to retrieve public submissions via the [Regulations.gov API](https://www.regulations.gov/apiOverview), including comments submitted as PDF attachments, and convert them into text data. As we continue uploading new content, we hope other researchers and programmers can contribute to the repository or suggest improvements to make it a more useful tool.
 
-# Retrieving public comments from Regulations.gov
+# Retrieve public comments from Regulations.gov
 ## Regulations.gov API
 [Regulations.gov](https://www.regulations.gov/) is a central portal for public users to access U.S. federal regulatory materials and submit comments on proposed regulations. It was launched by the [eRulemaking Program](https://www.regulations.gov/aboutProgram) in January 2003. Today, nearly 300 federal agencies post an average of 8,000 regulations per year, among which the majority receive comments and share them on Regulations.gov, while others accept and post comments via other online platforms.
 
@@ -18,16 +18,19 @@ The first thing you need to use the Regulations.gov API is a unique API key desi
 
 You will then receive instructions and a URL for signing up an API key. You will be assigned a API key immediately, but it is not ready for use immediately. You will need to send the key back to the Regulations.gov Help Desk for the developers to activate your key for use on Regulations.gov. The activation process may take a few days to a couple of weeks.
 
-## How to retrieve comments submitted to a docket using API
+## Get comments submitted to a docket using API
 If you would like to retrieve the full text of comments submitted to a Regulations.gov docket (e.g., [Identifying Regulatory Reform Initiatives](https://www.regulations.gov/docket?D=USDA-2017-0002)), follow these steps:
 * Export the docket folder: the exported file contains metadata for all the documents in the docket (e.g., rules, public submissions), including a Document ID for each comment which will be used as an identifier in API quiries.
-	* Go to the Docket Folder Summary page ([example](https://www.regulations.gov/docket?D=USDA-2017-0002))
-	* Click on View All in the Comments section
-	* Click on Export (on top of the results) and save the .csv file to your local folder
+	* Go to the Docket Folder Summary page ([example](https://www.regulations.gov/docket?D=USDA-2017-0002)).
+	* Click on View All in the Comments section.
+	* Click on Export (on top of the results) and save the .csv file to your local folder.
 * Modify the Python script "Retrive Comments/GetComments.py" to download comments submitted to the docket in both text and attachment format.
 	* *(For Beginners who use Python for the first time)* Select your preferred development environment for running the Python script (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/)). You can also install [Anaconda](https://www.anaconda.com/) to help you manage the environment.
 	* Modify the script following the annotations in the script, including adding your API key and specifying the location of your exported docket metadata file, etc.
-	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC files to your local folder
+	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC attachments to your designated folder. In very rare cases, comments are submitted in other formats, such as .jpg or .xml files. In those cases, the script will direct you to download those comments manually.
 
 *Notes: Regulations.gov sets a rate limit of 1,000 requests per hour applied to all API users. A pause is added between two requests using `time.sleep()` in the script to avoid errors. As a result, it may take a long time if you are retrieving a large number of comments.*
 
+## Covert PDF/DOC comments into text
+Comments can be submitted as either plain text or attachments (PDF, DOC, etc.) on Regulations.gov. If you have run through the [GetComments](Retrieve Comments/GetComments.py) script, all text comments are now exported into a .csv file, and all comments submitted as attachments are downloaded into your designated folder. There are many scripts available online to convert PDF or DOC files into text. Here we share the code we used to convert PDF and DOC comments.
+* Simply modify the Python script "Retrive Comments/ConvertText.py" as annotated to convert all PDF and DOC files in the designated folder into text.
