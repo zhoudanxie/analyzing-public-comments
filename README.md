@@ -6,7 +6,7 @@ In this research, we (the GW Regulatory Studies Center research team) developed 
 We will update this repository routinely with new code from the above project and future research using comments. The initial content available in the repository includes the code to retrieve public submissions via the [Regulations.gov API](https://www.regulations.gov/apiOverview), including comments submitted as PDF attachments, and convert them into text data. As we continue uploading new content, we hope other researchers and programmers can contribute to the repository or suggest improvements to make it a more useful tool.
 
 *For Beginners who use Python for the first time:
-Select your preferred development environment for running the Python script (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/)). You can also install [Anaconda](https://www.anaconda.com/) to help you manage the environment.*
+Select your preferred development environment for running Python scripts (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/)). You can also install [Anaconda](https://www.anaconda.com/) to help you manage the environment.*
 
 # Retrieve public comments from Regulations.gov
 ## Regulations.gov API
