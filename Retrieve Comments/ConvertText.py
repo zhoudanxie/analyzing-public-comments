@@ -116,6 +116,12 @@ if len(notConverted)>0:
     print(notConverted)
 print("END")
 
+# Print an example
+print(dic_pdfComments.keys())
+for key, value in dic_pdfComments.items():
+    if key=="EPA-HQ-OA-2017-0190-32609_1":      #! Print the text of a specified document
+        print(key, ":", value)
+
 #---------------------------------------------Export converted comments-------------------------------------------------
 # Export to JSON
 js_pdfComments=json.dumps(dic_pdfComments)
