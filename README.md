@@ -16,7 +16,7 @@ Regulations.gov offers all its public data in machine readable format via an [AP
 
 For a detailed description of Regulations.gov API, visit: https://regulationsgov.github.io/developers/.
 
-### How to request a API key
+### *How to request a API key*
 The first thing you need to use the Regulations.gov API is a unique API key designated to you or your organization. You can contact the Regulations.gov Help Desk to request an API key, providing the information listed on [this page](https://regulationsgov.github.io/developers/).
 
 You will then receive instructions and a URL for signing up an API key. You will be assigned a API key immediately, but it is not ready for use immediately. You will need to send the key back to the Regulations.gov Help Desk for the developers to activate your key for use on Regulations.gov. The activation process may take a few days to a couple of weeks.
