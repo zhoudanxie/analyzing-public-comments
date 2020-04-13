@@ -116,6 +116,7 @@ if len(notConverted)>0:
     print(notConverted)
 print("END")
 
+<<<<<<< HEAD
 # Print an example
 print(dic_pdfComments.keys())
 for key, value in dic_pdfComments.items():
@@ -123,6 +124,9 @@ for key, value in dic_pdfComments.items():
         print(key, ":", value)
 
 #---------------------------------------------Export converted comments-------------------------------------------------
+=======
+#---------------------------------------------Export converted text-------------------------------------------------
+>>>>>>> c058682052538e47f97591a2dca6c07141d4d8de
 # Export to JSON
 js_pdfComments=json.dumps(dic_pdfComments)
 with open('Retrieve Comments/Attachment Comments Example.json', 'w', encoding='utf-8') as f:
