@@ -27,7 +27,7 @@ If you would like to retrieve the full text of comments submitted to a Regulatio
 	* Go to the Docket Folder Summary page ([example](https://www.regulations.gov/docket?D=USDA-2017-0002)).
 	* Click on View All in the Comments section.
 	* Click on Export (on top of the results) and save the .csv file to your local folder.
-* Modify and run the Python script "<a href="Retrieve Comments/GetComments.py">Retrive Comments/GetComments.py</a>" to download comments submitted to the docket in both text and attachment format.
+* Modify and run the Python script "<a href="Retrieve Comments/GetComments.py">Retrieve Comments/GetComments.py</a>" to download comments submitted to the docket in both text and attachment format.
 	* Modify the script following the annotations in the script, including adding your API key and specifying the location of your exported docket metadata file, etc.
 	* Run the script to export all text comments into a .csv file (or any other desired format) and download all comments submitted as PDF or DOC attachments to your designated folder. In very rare cases, comments are submitted in other formats, such as .jpg or .xml files. In those cases, the script will direct you to download those comments manually.
 
@@ -35,4 +35,4 @@ If you would like to retrieve the full text of comments submitted to a Regulatio
 
 ## Covert PDF/DOC comments into text
 Comments can be submitted as either plain text or attachments (PDF, DOC, etc.) on Regulations.gov. If you have run through the <a href="Retrieve Comments/GetComments.py">GetComments</a> script, all text comments are now exported into a .csv file, and all comments submitted as attachments are downloaded into your designated folder. There are many options available online to convert PDF or DOC files into text. Here we share the Python code we used to convert all PDF and DOC files in a folder at one time. To execute the code:
-* Modify and run the Python script "<a href="Retrieve Comments/ConvertText.py">Retrive Comments/ConvertText.py</a>" as annotated to convert all PDF and DOC files in the designated folder into text.
+* Modify and run the Python script "<a href="Retrieve Comments/ConvertText.py">Retrieve Comments/ConvertText.py</a>" as annotated to convert all PDF and DOC files in the designated folder into text.
