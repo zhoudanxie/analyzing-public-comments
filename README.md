@@ -8,6 +8,8 @@ We will update this repository routinely with new code from the above project an
 *For beginners who use Python for the first time:
 Select your preferred development environment for running Python scripts (e.g., [PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/), [Jupyter Notebook](https://jupyter.org/)). You can also install [Anaconda](https://www.anaconda.com/) to help you manage the environment.*
 
+*To import the code from a .py file into a .ipynb file, users of Jupyter Notebook can take the following steps: 1) Upload the .py file to the desired folder; 2) Create a new notebook; 3) Execute a cell in the new notebook containing `%load filename.py` (for more information, see [Stack Overflow](https://stackoverflow.com/a/21034906)).*
+
 # Retrieve public comments from Regulations.gov
 ## Regulations.gov API
 [Regulations.gov](https://www.regulations.gov/) is a central portal for public users to access U.S. federal regulatory materials and submit comments on proposed regulations. It was launched by the [eRulemaking Program](https://www.regulations.gov/aboutProgram) in January 2003. Today, nearly 300 federal agencies post an average of 8,000 regulations per year, among which the majority receive comments and share them on Regulations.gov, while others accept and post comments via other online platforms.
