@@ -5,7 +5,7 @@ In this research, we (the GW Regulatory Studies Center research team) developed 
 
 We will update this repository routinely with new code from the above project and future research using comments. The initial content available in the repository includes the code to retrieve public submissions via the [Regulations.gov API](https://www.regulations.gov/apiOverview), including comments submitted as PDF attachments, and convert them into text data. As we continue uploading new content, we hope other researchers and programmers can contribute to the repository or suggest improvements to make it a more useful tool.
 
-*For beginners who use Python for the first time, you may find resources in the <a href="For Python Beginners/">For Python Beginners</a> folder useful.
+*For beginners who use Python for the first time, you may find resources in the <a href="For Python Beginners/">For Python Beginners</a> folder useful.*
 
 # Retrieve public comments from Regulations.gov
 ## Regulations.gov API
