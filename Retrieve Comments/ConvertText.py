@@ -124,6 +124,7 @@ for key, value in dic_pdfComments.items():
 
 #---------------------------------------------Export converted text-------------------------------------------------
 # Export to JSON
+## Output file will include text from all converted comments in one file
 js_pdfComments=json.dumps(dic_pdfComments)
 with open('Retrieve Comments/Attachment Comments Example.json', 'w', encoding='utf-8') as f:    #! Specify the file to which you want to export the JSON
     json.dump(js_pdfComments, f, ensure_ascii=False, indent=4)
